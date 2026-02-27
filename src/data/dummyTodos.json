@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Learn React 19",
+    "description": "Study the new features and hooks in React 19",
+    "status": "IN_PROGRESS",
+    "progress": 65,
+    "createdAt": "2026-02-08T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Build Todo App",
+    "description": "Create a functional todo application with CRUD operations",
+    "status": "IN_PROGRESS",
+    "progress": 85,
+    "createdAt": "2026-02-10T14:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Deploy to Production",
+    "description": "Deploy the application to a production server",
+    "status": "PENDING",
+    "progress": 0,
+    "createdAt": "2026-02-11T09:00:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Write Documentation",
+    "description": "Create comprehensive README and API documentation",
+    "status": "COMPLETED",
+    "progress": 100,
+    "createdAt": "2026-02-05T11:00:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Test Edge Cases",
+    "description": "Perform thorough testing for all edge cases",
+    "status": "PENDING",
+    "progress": 30,
+    "createdAt": "2026-02-09T15:30:00Z"
+  }
+]

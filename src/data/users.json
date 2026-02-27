@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "johndoe",
+    "email": "john@example.com",
+    "password": "password123",
+    "createdAt": "2026-01-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "username": "janedoe",
+    "email": "jane@example.com",
+    "password": "password123",
+    "createdAt": "2026-01-05T14:30:00Z"
+  }
+]

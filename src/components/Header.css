@@ -1,0 +1,130 @@
+/* Header Styling */
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.header-brand:hover {
+  transform: scale(1.05);
+}
+
+.brand-icon {
+  font-size: 1.8rem;
+}
+
+.brand-text {
+  letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.user-name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-logout {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 12px 15px;
+  }
+
+  .header-brand {
+    font-size: 1.1rem;
+    order: 1;
+  }
+
+  .brand-icon {
+    font-size: 1.5rem;
+  }
+
+  .header-subtitle {
+    display: none;
+  }
+
+  .header-user {
+    order: 2;
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-end;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .btn-logout {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  .header-user {
+    width: 100%;
+    order: 3;
+  }
+
+  .btn-logout {
+    width: 100%;
+  }
+}

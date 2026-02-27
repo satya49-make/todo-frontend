@@ -1,0 +1,12 @@
+/* App Layout */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+}
