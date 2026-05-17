@@ -1,13 +1,21 @@
+// api.js
 import dummyTodos from '../data/dummyTodos.json'
 import dummyUsers from '../data/users.json'
 
-const authToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXR5YTEyIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3Nzg5MjcwMDIsImV4cCI6MTc3ODkzMDYwMn0._r7iZPBLmhdxZp3wjtBztVFG19633v_lwdu0_nOFhGc'
+// Base URL from environment
+const API_BASE = import.meta.env.VITE_API_BASE;
+console.log("All env vars:", import.meta.env);
+console.log("API_BASE:", import.meta.env.VITE_API_BASE);
+
 // Auth APIs
 export const authAPI = {
   // Register a new user
   register: async (email, username, password, role = 'USER') => {
     try {
-      const res = await fetch(`http://localhost:8081/auth/register`, {
+      console.log("API_BASE:", import.meta.env.VITE_API_BASE);
+      console.log("url:", `${API_BASE}/auth/register`);
+      console.log("Request body:", { email, username, role });
+      const res = await fetch(`${API_BASE}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -31,7 +39,9 @@ export const authAPI = {
   // Login existing user
   login: async (username, password) => {
     try {
-      const res = await fetch(`http://localhost:8081/auth/login`, {
+      console.log("url:", `${API_BASE}/auth/login`);
+      console.log("Request body:", { username, password });
+      const res = await fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -56,13 +66,12 @@ export const authAPI = {
   }
 };
 
-
 export const taskAPI = {
   // Get all tasks for current user
   getTasks: async () => {
     try {
       console.log("Fetching tasks with authToken:", `Bearer ${localStorage.getItem('authToken')}`);
-      const res = await fetch(`http://localhost:8081/tasks`, {
+      const res = await fetch(`${API_BASE}/tasks`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
@@ -80,7 +89,7 @@ export const taskAPI = {
   // Create a new task
   createTask: async (title, description = '') => {
     try {
-      const res = await fetch(`http://localhost:8081/tasks`, {
+      const res = await fetch(`${API_BASE}/tasks`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
@@ -99,7 +108,7 @@ export const taskAPI = {
   // Update a task
   updateTask: async (id, { title, description, status, progress }) => {
     try {
-      const res = await fetch(`http://localhost:8081/tasks/${id}`, {
+      const res = await fetch(`${API_BASE}/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
@@ -118,7 +127,7 @@ export const taskAPI = {
   // Delete a task
   deleteTask: async (id) => {
     try {
-      const res = await fetch(`http://localhost:8081/tasks/${id}`, {
+      const res = await fetch(`${API_BASE}/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -132,5 +141,4 @@ export const taskAPI = {
   },
 };
 
-
-export default taskAPI
+export default taskAPI;
